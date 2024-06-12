@@ -1,0 +1,48 @@
+<div class="limiter">
+    <div class="container-login">
+      <div class="wrap-login">
+        <form class="login-form validate-form" [formGroup]="loginForm">
+          <span class="login-form-title p-b-43">
+            <b style="font-size: 26px;">STUDENT MANAGEMENT SYSTEM</b>
+            <br>
+            <img src="assets/lib4.png" class="image" width="180px" height="150px">
+            <br>
+            <br>
+            <b>BANDARAWELA CENTREL COLLEGE</b>
+            <br>
+            <br>
+            <div class="login-title">
+              <i>login to continue...</i>
+            </div>
+          </span>
+          <br>
+          <div class="wrap-input">
+            <input class="input" formControlName="username" type="text" name="username" [ngClass]="{'has-val': loginForm.controls['username'].value}">
+            <span class="focus-input"></span>
+            <span class="label-input"><b>Username</b></span>
+          </div>
+          
+          <div class="wrap-input validate-input" data-validate="Password is required">
+            <input class="input" formControlName="password" type="password" name="pass" [ngClass]="{'has-val': loginForm.controls['password'].value}">
+            <span class="focus-input"></span>
+            <span class="label-input"><b>Password</b></span>
+          </div>
+  
+          <div class="container-login-form-btn">
+            <button class="login-form-btn" (click)="OnLogin()">
+              Login
+            </button>
+          </div>
+  
+          <div class="container-login-form-btn">
+            <button class="register-btn" (click)="onRegister()">
+              Register
+            </button>
+          </div>
+        </form>
+  
+        <div class="login-more" style="background-image: url('assets/lib2.jpg');"></div>
+      </div>
+    </div>
+  </div>
+  
