@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {
-  sideBarOpen = true;
+  sidebarExpanded = true;
 
-  sideBarToggler(){
-    this.sideBarOpen = !this.sideBarOpen;
+  toggleSidebar() {
+    this.sidebarExpanded = !this.sidebarExpanded;
   }
 
 }

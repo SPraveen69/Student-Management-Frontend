@@ -1,0 +1,16 @@
+/* sidenav.css */
+.sidebar {
+    background-color: rgb(195, 137, 67);
+    height: 512px;
+    width: 200px;
+    transition: width 0.3s ease; /* Add smooth transition */
+}
+
+.expanded .sidebar {
+    width: 200px; /* Sidebar width when expanded */
+}
+
+.collapsed .sidebar {
+    width: 0; /* Sidebar width when collapsed */
+    overflow: hidden; /* Hide the content when collapsed */
+}

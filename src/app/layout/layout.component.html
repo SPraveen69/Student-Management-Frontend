@@ -1,10 +1,13 @@
-<mat-drawer-container>
-    <mat-drawer mode="side" [opened]= "sideBarOpen">
-        <app-sidenav></app-sidenav>
-    </mat-drawer>
-    <mat-drawer-content>
-        <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+<section class="">
+    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+    <main class="d-flex">
+      <article [ngClass]="{ 'expanded': sidebarExpanded }"> 
+        <app-sidenav *ngIf="sidebarExpanded"></app-sidenav>
+      </article>
+      <article class="p-4">
         <router-outlet></router-outlet>
-        <app-footer></app-footer>
-    </mat-drawer-content>   
-</mat-drawer-container>
+      </article>
+    </main>
+    <app-footer></app-footer>
+  </section>
+  
