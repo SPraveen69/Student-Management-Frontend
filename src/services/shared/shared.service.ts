@@ -27,6 +27,10 @@ export class SharedService {
   }
 
   addStudent(data: any): Observable<any>{
-    return this.http.post<any>(`${apiUrl}/Student/AddStudent`, data);
+    return this.http.post(`${apiUrl}/Student/AddStudent`, data, {
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
   }
 }

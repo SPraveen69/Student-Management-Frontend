@@ -1,0 +1,20 @@
+.profile-picture {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-picture input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .profile-picture mat-icon {
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+  }
+  

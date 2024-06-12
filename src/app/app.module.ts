@@ -24,11 +24,15 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
 
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { StudentHubComponent } from './student-hub/student-hub.component';
+import { EditStudentComponent } from './student-hub/edit-student/edit-student.component';
+import { AddStudentComponent } from './student-hub/add-student/add-student.component';
+import { DeleteStudentComponent } from './student-hub/delete-student/delete-student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +42,10 @@ import { StudentHubComponent } from './student-hub/student-hub.component';
     SidenavComponent,
     HeaderComponent,
     FooterComponent,
-    StudentHubComponent
+    StudentHubComponent,
+    EditStudentComponent,
+    AddStudentComponent,
+    DeleteStudentComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,8 @@ import { StudentHubComponent } from './student-hub/student-hub.component';
     MatFormFieldModule,
     MatSortModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,11 +18,11 @@ export class AuthguardService {
   }
 
   login(data: any): Observable<any>{
-    return this.http.post<any>(`${apiUrl}User/authenticate`, data);
+    return this.http.post<any>(`${apiUrl}/User/authenticate`, data);
   }
 
   register(data:any): Observable<any>{
-    return this.http.post<any>(`${apiUrl}User/register`, data);
+    return this.http.post<any>(`${apiUrl}/User/register`, data);
   }
   
   isLoggedIn(): boolean{

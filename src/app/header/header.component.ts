@@ -6,16 +6,12 @@ import { AuthguardService } from 'src/services/auth/authguard.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent{
   
   @Output() toggleSidebar: EventEmitter<void>= new EventEmitter<void>();
 
   constructor(private auth: AuthguardService){}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
-  // Method to emit the toggleSidebar event when the button is clicked
   onToggleSidebar() {
     this.toggleSidebar.emit();
   }

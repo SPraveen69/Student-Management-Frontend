@@ -1,0 +1,82 @@
+<mat-dialog-content>
+    <div class="form-container">
+        <div class="form-group">
+            <h1>"Insert Student Details"</h1>
+            <form [formGroup]="studentForm">
+
+             <div class="form-floating mb-1">
+                <input type="number" class="form-control" id="floatingId" placeholder="Student ID" formControlName="Id" required>
+                <label for="floatingId">Student ID</label>
+                <mat-error *ngIf="studentForm.get('Id')?.hasError('required')  && (studentForm.get('Id')?.dirty || studentForm.get('Id')?.touched || submitted)">ID is required.</mat-error>
+        
+             </div>   
+
+             <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingFName" placeholder="Student First Name" formControlName="FirstName" required>
+                <label for="floatingFName"> Student First Name</label>
+                <mat-error *ngIf="studentForm.get('FirstName')?.hasError('maxlength')">Name must be within 100 characters.</mat-error>
+                <mat-error *ngIf="studentForm.get('FirstName')?.hasError('required')  && (studentForm.get('FirstName')?.dirty || studentForm.get('FirstName')?.touched || submitted)">First Name is required.</mat-error>
+             </div>
+
+             <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingLName" placeholder="Student Last Name" formControlName="LastName" required>
+                <label for="floatingLName"> Student Last Name</label>
+                <mat-error *ngIf="studentForm.get('LastName')?.hasError('maxlength')">Name must be within 100 characters.</mat-error>
+                <mat-error *ngIf="studentForm.get('LastName')?.hasError('required')  && (studentForm.get('LastName')?.dirty || studentForm.get('LastName')?.touched || submitted)">Last Name is required.</mat-error>
+             </div>
+
+             <div class="form-floating mb-1">
+                <input type="email" class="form-control" id="floatingEmail" placeholder="Email" formControlName="Email" required>
+                <label for="floatingEmail"> Email ID</label>
+                <mat-error *ngIf="studentForm.get('Email')?.hasError('maxlength')">Email must be within 30 characters.</mat-error>
+                <mat-error *ngIf="studentForm.get('Email')?.hasError('Email')  && (studentForm.get('Email')?.dirty)"> Please enter a valid email.</mat-error>
+                <mat-error *ngIf="studentForm.get('Email')?.hasError('required')  && (studentForm.get('Email')?.dirty || studentForm.get('Email')?.touched || submitted)"> Email is Required. </mat-error>
+               </div>
+
+             <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingPhone" placeholder="Contact No." formControlName="Phone" required>
+                <label for="floatingPhone"> Contact No.</label>
+                <mat-error *ngIf="studentForm.get('Phone')?.hasError('maxlength')">Contact No. must be within 12 characters.</mat-error>
+                <mat-error *ngIf="studentForm.get('Phone')?.hasError('required')  && (studentForm.get('Phone')?.dirty || studentForm.get('Phone')?.touched || submitted)">Contact No. is required.</mat-error>
+             </div>
+
+             <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingNIC" placeholder="NIC" formControlName="NIC" required>
+                <label for="floatingNIC"> NIC</label>
+                <mat-error *ngIf="studentForm.get('NIC')?.hasError('maxlength')">NIC must be within 12 characters.</mat-error>
+                <mat-error *ngIf="studentForm.get('NIC')?.hasError('required')  && (studentForm.get('NIC')?.dirty || studentForm.get('NIC')?.touched || submitted)">NIC is required.</mat-error>
+             </div>
+
+             <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingDOB" placeholder="DOB" formControlName="DOB" required>
+                <label for="floatingDOB"> DOB</label>
+                <mat-error *ngIf="studentForm.get('DOB')?.hasError('maxlength')">DOB must be within 10 characters.</mat-error>
+                <mat-error *ngIf="studentForm.get('DOB')?.hasError('required')  && (studentForm.get('DOB')?.dirty || studentForm.get('DOB')?.touched || submitted)">DOB is required.</mat-error>
+             </div>
+
+             <div class="form-floating mb-1">
+                <input type="text" class="form-control" id="floatingAddress" placeholder="Address" formControlName="Address" required>
+                <label for="floatingAddress"> Address</label>
+                <mat-error *ngIf="studentForm.get('Address')?.hasError('maxlength')">Address must be within 10 characters.</mat-error>
+                <mat-error *ngIf="studentForm.get('Address')?.hasError('required')  && (studentForm.get('Address')?.dirty || studentForm.get('Address')?.touched || submitted)">Address is required.</mat-error>
+             </div>
+             <input type="file" (change)="onFileSelected($event)" accept="image/*">
+             <!-- <div class="profile-picture">
+                <input type="file" (change)="onFileSelected($event)" accept="image/*">
+                <mat-icon>attach_file</mat-icon>
+                <mat-hint>Select a profile picture</mat-hint>
+              </div>
+              <mat-form-field appearance="outline">
+                <mat-label>Profile Picture</mat-label>
+                <input matInput [formControl]="Photo">
+                <mat-error *ngIf="Photo.hasError('required')">Profile picture is required</mat-error>
+              </mat-form-field> -->
+            </form>
+        </div>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button (click)="closeDialog()" class="btn btn-secondary"> Close </button>
+    <button mat-button (click)="saveData()" class="btn btn-primary">Save</button>
+</mat-dialog-actions>

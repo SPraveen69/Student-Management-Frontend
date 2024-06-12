@@ -7,4 +7,5 @@ export interface Student {
     NIC : string;
     DOB : string;
     Address: string;
+    Photo: File;
 }

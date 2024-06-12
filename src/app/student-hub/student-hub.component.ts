@@ -5,6 +5,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Student } from 'src/Models/student.model';
 import { SharedService } from 'src/services/shared/shared.service';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 @Component({
   selector: 'app-student-hub',
@@ -45,31 +47,31 @@ export class StudentHubComponent {
     this.pageSize = event.pageSize;
   }
 
-  // openAddStudentDialog(): void{
-  //   const dialogRef = this.dialog.open(AddStudentComponent, {
-  //     width: '800px',
-  //     height: '450px'
-  //   });
+  openAddStudentDialog(): void{
+    const dialogRef = this.dialog.open(AddStudentComponent, {
+      width: '800px',
+      height: '450px'
+    });
 
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     if(result){
-  //       this.loadStudents();
-  //     }
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe((result) => {
+      if(result){
+        this.loadStudents();
+      }
+    });
+  }
 
-  // openEditStuedentDialog(student: Student):void{
-  //   const dialogRef = this.dialog.open(EditStudentComponent, {
-  //     width: '800px',
-  //     height: '450px',
-  //     data: student,
-  //   });
+  openEditStuedentDialog(student: Student):void{
+    const dialogRef = this.dialog.open(EditStudentComponent, {
+      width: '800px',
+      height: '450px',
+      data: student,
+    });
 
-  //   dialogRef.afterClosed().subscribe((result)=>{
-  //     if(result){
-  //       this.loadStudents();
-  //     }
-  //   })
-  // }
+    dialogRef.afterClosed().subscribe((result)=>{
+      if(result){
+        this.loadStudents();
+      }
+    })
+  }
 }
  
