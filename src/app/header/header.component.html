@@ -1,11 +1,18 @@
-<!-- header.html -->
-<nav class="d-flex justify-content-between bg-color p-4 text-dark">
-    <div class="">
-        <p class="text-uppercase fw-bold fs-5">Logo</p>
+<!-- header.component.html -->
+<nav class="header">
+    <div class="logo">
+        <img src="assets/lib3.png" alt="Logo" width="250">
+        
     </div>
-    <div class="d-flex gap-4 fs-6">
-        <p class="cursor" routerLink="/">Home</p>
-        <p class="cursor" routerLink="/contact">Contact</p>
-        <button class="toggle-btn" (click)="onToggleSidebar()">Toggle Sidebar</button>
+    <div class="row mr-2 ml-auto">
+        <button mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center">
+            <mat-icon class="user-image-icon ml-1">settings</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+            Logout
+            </button>
+        </mat-menu>
     </div>
 </nav>

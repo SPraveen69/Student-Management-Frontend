@@ -1,1 +1,57 @@
-<p>student-hub works!</p>
+<div class="container-fluid page">
+  <div class="page__box p-3 mt-2">Student Details </div>
+  <div class="page__content shadow p-3 position-relative">
+    <div class="d-flex justify-content-between mt-3 mb-3">
+      <button class="btn btn-primary" style="font-size: 25px;">
+        Register Student
+      </button>
+    </div>
+    <mat-divider></mat-divider>
+
+    <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="pageIndex" [pageSizeOptions]="[10,20,30]"
+      (page)="onPageChange($event)">
+
+    </mat-paginator>
+    <mat-tab-group>
+      <mat-tab label="Students">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>NIC</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let stu of students.slice(pageIndex * pageSize, pageIndex * pageSize + pageSize);">
+              <td>{{ stu.firstName }}</td>
+              <td>{{ stu.lastName }}</td>
+              <td>{{ stu.email }}</td>
+              <td>{{ stu.phone }}</td>
+              <td>{{ stu.nic }}</td>
+              <td>
+                <button class="btn0 btn-primary"  matTooltip="view the Book">
+                  <mat-icon> person_search </mat-icon>
+                </button>
+                <button class="btn1 btn-warning"  matTooltip="Edit the Book">
+                  <mat-icon> create</mat-icon>
+                </button>
+                <button class="btn2 btn-danger" matTooltip="Remarks:">
+                  <mat-icon> cancel </mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </mat-tab>
+     
+    </mat-tab-group>
+
+
+    <div class="page__content-data position-absolute">
+  </div>
+</div>

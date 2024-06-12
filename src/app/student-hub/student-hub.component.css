@@ -1,0 +1,86 @@
+.page {
+  color: aliceblue;
+  background: #fff;
+  padding: 0 1rem;
+}
+
+.page__box {
+  min-height: 120px;
+  background: #2f0358;
+  margin: 0 -1rem;
+  font-size: 36px;
+}
+
+.page__content {
+  min-height: calc(100vh - 178px);
+  border-radius: 10px;
+  margin-top: -2rem;
+  background: #fff;
+  color: #000;
+  font-size: 2rem;
+}
+
+.page__content-data {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table th {
+  background-color: #f2f2f2;
+}
+
+.btn0{
+  height: 40px;
+  width: 40px;
+  border-radius: 0.6rem;
+  margin-right: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+.btn1{
+  height: 40px;
+  width: 40px;
+  border-radius: 0.6rem;
+  margin-right: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+.btn2{
+  height: 40px;
+  width: 40px;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+.btn0:hover {
+  background-color: #032ef0; 
+  color: #fff; 
+}
+
+
+.btn1:hover {
+  background-color: #ffc107; 
+  color: #fff; 
+}
+
+
+.btn2:hover {
+  background-color: #740606;
+  color: #fff; 
+}

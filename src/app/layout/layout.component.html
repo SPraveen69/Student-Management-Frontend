@@ -4,7 +4,7 @@
       <article [ngClass]="{ 'expanded': sidebarExpanded }"> 
         <app-sidenav *ngIf="sidebarExpanded"></app-sidenav>
       </article>
-      <article class="p-4">
+      <article style="width: 100%;">
         <router-outlet></router-outlet>
       </article>
     </main>
