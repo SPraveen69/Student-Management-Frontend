@@ -2,7 +2,7 @@
     <app-header (toggleSidebar)="toggleSidebar()"></app-header>
     <main class="d-flex">
       <article [ngClass]="{ 'expanded': sidebarExpanded }"> 
-        <app-sidenav *ngIf="sidebarExpanded"></app-sidenav>
+        <!-- <app-sidenav *ngIf="sidebarExpanded"></app-sidenav> -->
       </article>
       <article style="width: 100%;">
         <router-outlet></router-outlet>

@@ -1,6 +1,6 @@
 .edit-student {
     width: 100%;
-    max-width: 800px; /* Adjust as needed */
+    max-width: 800px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
@@ -18,11 +18,11 @@
   
   .profile-section {
     display: flex;
-    align-items: flex-start; /* Align items at the start of flex container */
+    align-items: flex-start;
   }
   
   .profile-left {
-    flex: 0 0 auto; /* Don't grow, don't shrink, maintain initial size */
+    flex: 0 0 auto; 
     margin-right: 20px;
   }
   
@@ -54,7 +54,7 @@
   }
   
   .profile-right {
-    flex: 1; /* Take remaining space */
+    flex: 1; 
   }
   
   .name-id {
@@ -78,7 +78,7 @@
   
   label {
     display: block;
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 16px; 
     font-weight: bold;
     margin-bottom: 5px;
   }
@@ -89,7 +89,7 @@
   textarea {
     width: 100%;
     padding: 10px;
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;

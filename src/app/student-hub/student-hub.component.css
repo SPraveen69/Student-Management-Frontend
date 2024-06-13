@@ -10,12 +10,12 @@ html, body {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 80vh;
 }
 
 .page__box {
   min-height: 120px;
-  background: #2f0358;
+  background: #4d0a0a;
   margin: 0 -1rem;
   font-size: 36px;
 }
@@ -24,11 +24,11 @@ html, body {
   flex: 1; 
   border-radius: 10px;
   margin-top: -2rem;
-  background: #fff;
+  background: #d8caca;
   color: #000;
   font-size: 2rem;
-  overflow: auto; /* Enable scrolling if content overflows */
-  padding: 1rem; /* Add padding for better appearance */
+  overflow: auto; 
+  padding: 1rem; 
 }
 
 .page__content-data {
@@ -55,6 +55,10 @@ html, body {
   background-color: #f2f2f2;
 }
 
+.btn{
+  background-color: #1b1daf;
+}
+
 .btn0, .btn1, .btn2 {
   height: 40px;
   width: 40px;
@@ -78,3 +82,18 @@ html, body {
   background-color: #740606;
   color: #fff; 
 }
+
+.styled-table th {
+  padding: 12px; 
+  text-align: left; 
+  border-bottom: 10px solid #d8caca; 
+  font-size: 23px;
+  font-weight: 1000;
+}
+
+.styled-table td {
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 5px solid #d8caca; 
+}
+
