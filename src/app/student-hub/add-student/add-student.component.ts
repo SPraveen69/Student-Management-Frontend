@@ -54,13 +54,6 @@ export class AddStudentComponent {
       panelClass: 'custom-snackbar'
     });
   }
-  // onFileSelected(event: any): void {
-  //   const file: File = event.target.files[0];
-  //   if (file) {
-  //     this.studentForm.patchValue({ Photo: file });
-  //     this.Photo.setValue(file.name);
-  //   }
-  // }
   
   onFileSelected(event: any) {
     this.profilePicture = <File>event.target.files[0];

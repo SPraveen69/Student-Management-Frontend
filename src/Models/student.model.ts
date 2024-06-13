@@ -1,11 +1,11 @@
 export interface Student {
-    Id: string;
-    FirstName: string;
-    LastName: string;
-    Email: string;
-    Mobile : string;
-    NIC : string;
-    DOB : string;
-    Address: string;
-    Photo: File;
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone : string;
+    nic : string;
+    dob : string;
+    address: string;
+    photo: string;
 }

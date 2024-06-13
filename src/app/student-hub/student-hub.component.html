@@ -27,13 +27,13 @@
           </thead>
           <tbody>
             <tr *ngFor="let stu of students.slice(pageIndex * pageSize, pageIndex * pageSize + pageSize);">
-              <td>{{ stu.firstName }}</td>
+              <td>{{ stu.firstName }} </td>
               <td>{{ stu.lastName }}</td>
               <td>{{ stu.email }}</td>
               <td>{{ stu.phone }}</td>
               <td>{{ stu.nic }}</td>
               <td>
-                <button class="btn0 btn-primary"  matTooltip="view the Book">
+                <button class="btn0 btn-primary" (click)="openViewStudentDialog(stu)" matTooltip="view the Book">
                   <mat-icon> person_search </mat-icon>
                 </button>
                 <button class="btn1 btn-warning" (click)="openEditStuedentDialog(stu)"  matTooltip="Edit the Book">
@@ -53,5 +53,6 @@
 
 
     <div class="page__content-data position-absolute">
-  </div>
+     
+    </div>
 </div>

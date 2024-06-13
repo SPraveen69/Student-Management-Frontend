@@ -7,6 +7,7 @@ import { Student } from 'src/Models/student.model';
 import { SharedService } from 'src/services/shared/shared.service';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { ViewStudentComponent } from './view-student/view-student.component';
 
 @Component({
   selector: 'app-student-hub',
@@ -15,6 +16,7 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
 })
 export class StudentHubComponent {
   students: any[] = [];
+
 
   constructor(
     private dialog : MatDialog,
@@ -73,5 +75,20 @@ export class StudentHubComponent {
       }
     })
   }
+
+  openViewStudentDialog(student: Student):void{
+    const dialogRef = this.dialog.open(ViewStudentComponent, {
+      width: '800px',
+      height: '450px',
+      data: student,
+    });
+
+    dialogRef.afterClosed().subscribe((result)=>{
+      if(result){
+        this.loadStudents();
+      }
+    })
+  }
+  
 }
  

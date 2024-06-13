@@ -33,6 +33,7 @@ import { StudentHubComponent } from './student-hub/student-hub.component';
 import { EditStudentComponent } from './student-hub/edit-student/edit-student.component';
 import { AddStudentComponent } from './student-hub/add-student/add-student.component';
 import { DeleteStudentComponent } from './student-hub/delete-student/delete-student.component';
+import { ViewStudentComponent } from './student-hub/view-student/view-student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { DeleteStudentComponent } from './student-hub/delete-student/delete-stud
     StudentHubComponent,
     EditStudentComponent,
     AddStudentComponent,
-    DeleteStudentComponent
+    DeleteStudentComponent,
+    ViewStudentComponent
   ],
   imports: [
     BrowserModule,
