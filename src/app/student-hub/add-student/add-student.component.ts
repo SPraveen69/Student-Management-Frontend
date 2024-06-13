@@ -57,6 +57,13 @@ export class AddStudentComponent {
   
   onFileSelected(event: any) {
     this.profilePicture = <File>event.target.files[0];
+    if (this.profilePicture) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.profilePicture = e.target.result;
+      };
+      reader.readAsDataURL(this.profilePicture);
+    }
   }
   saveData(): void{
     this.submitted = true;

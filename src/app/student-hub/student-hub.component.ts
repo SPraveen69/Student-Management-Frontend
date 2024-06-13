@@ -65,7 +65,7 @@ export class StudentHubComponent {
 
     this.dataSource.filter = filterValue;
   }
-  
+
   onPageChange(event:any) : void {
     this.pageIndex = event.pageIndex;
     this.pageSize = event.pageSize;
@@ -73,8 +73,8 @@ export class StudentHubComponent {
 
   openAddStudentDialog(): void{
     const dialogRef = this.dialog.open(AddStudentComponent, {
-      width: '800px',
-      height: '450px'
+      width: '700px',
+      height: '570px'
     });
 
     dialogRef.afterClosed().subscribe((result) => {
