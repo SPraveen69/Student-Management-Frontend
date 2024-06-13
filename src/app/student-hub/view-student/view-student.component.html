@@ -1,46 +1,57 @@
 <div class="student-details">
-    <div class="form-group">
-    <form [formGroup]="viewForm">
-      <div class="form-floating mb-1">
-        <input type="number" class="form-control" id="floatingId" placeholder="Student ID" formControlName="Id" required>
-        <label for="floatingId">Student ID</label>
-      </div>   
-  
-      <div class="form-floating mb-1">
-        <input type="text" class="form-control" id="floatingFName" placeholder="Student First Name" formControlName="FirstName" required>
-        <label for="floatingFName">Student First Name</label>
+    <button class="close-button" mat-icon-button (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+    
+    <div class="student-card">
+      <div class="student-left">
+        <div class="student-photo-container">
+          <img *ngIf="imageUrl" [src]="imageUrl" alt="Student Photo" class="student-photo">
+        </div>
+        <div class="student-name">
+          <h2>{{ viewForm.get('FirstName')?.value }} {{ viewForm.get('LastName')?.value }}</h2>
+        </div>
       </div>
-  
-      <div class="form-floating mb-1">
-        <input type="text" class="form-control" id="floatingLName" placeholder="Student Last Name" formControlName="LastName" required>
-        <label for="floatingLName">Student Last Name</label>
+      
+      <div class="student-right">
+        <form [formGroup]="viewForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="floatingId">Student ID:</label>
+              <input type="number" id="floatingId" formControlName="Id" readonly>
+            </div>   
+    
+            <div class="form-group">
+              <label for="floatingEmail">Email:</label>
+              <input type="email" id="floatingEmail" formControlName="Email" readonly>
+            </div>
+          </div>
+    
+          <div class="form-row">
+            <div class="form-group">
+              <label for="floatingPhone">Contact No:</label>
+              <input type="text" id="floatingPhone" formControlName="Phone" readonly>
+            </div>
+    
+            <div class="form-group">
+              <label for="floatingNIC">NIC:</label>
+              <input type="text" id="floatingNIC" formControlName="NIC" readonly>
+            </div>
+          </div>
+    
+          <div class="form-row">
+            <div class="form-group">
+              <label for="floatingDOB">DOB:</label>
+              <input type="text" id="floatingDOB" formControlName="DOB" readonly>
+            </div>
+    
+            <div class="form-group">
+              <label for="floatingAddress">Address:</label>
+              <input type="text" id="floatingAddress" formControlName="Address" readonly>
+            </div>
+          </div>
+        </form>
       </div>
-  
-      <div class="form-floating mb-1">
-        <input type="email" class="form-control" id="floatingEmail" placeholder="Email" formControlName="Email" required>
-        <label for="floatingEmail">Email ID</label>
-      </div>
-  
-      <div class="form-floating mb-1">
-        <input type="text" class="form-control" id="floatingPhone" placeholder="Contact No." formControlName="Phone" required>
-        <label for="floatingPhone">Contact No.</label>
-      </div>
-  
-      <div class="form-floating mb-1">
-        <input type="text" class="form-control" id="floatingNIC" placeholder="NIC" formControlName="NIC" required>
-        <label for="floatingNIC">NIC</label>
-      </div>
-  
-      <div class="form-floating mb-1">
-        <input type="text" class="form-control" id="floatingDOB" placeholder="DOB" formControlName="DOB" required>
-        <label for="floatingDOB">DOB</label>
-      </div>
-  
-      <div class="form-floating mb-1">
-        <input type="text" class="form-control" id="floatingAddress" placeholder="Address" formControlName="Address" required>
-        <label for="floatingAddress">Address</label>
-      </div>
-    </form>
     </div>
   </div>
   

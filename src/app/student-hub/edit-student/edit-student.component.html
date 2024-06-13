@@ -1,0 +1,70 @@
+<div class="edit-student">
+
+    <div class="profile-section">
+      <div class="profile-left">
+        <div class="profile-photo-container">
+          <img *ngIf="imageUrl" [src]="imageUrl" alt="Student Photo" class="profile-photo">
+          <label for="fileInput" class="change-photo" *ngIf="imageUrl">
+            Change Photo
+            <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*">
+          </label>
+          
+        </div>
+        <div class="name-id">
+            <form [formGroup]="editForm">
+          <div class="form-group">
+            
+            <p style="font-size: 20px;"><b>Student ID: {{ editForm.get('Id')?.value }}</b></p>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" formControlName="FirstName">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" formControlName="LastName">
+          </div>
+        </form>
+        </div>
+      </div>
+  
+      <div class="profile-right">
+        <form [formGroup]="editForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="floatingEmail">Email:</label>
+              <input type="email" id="floatingEmail" formControlName="Email">
+            </div>
+  
+            <div class="form-group">
+              <label for="floatingPhone">Phone:</label>
+              <input type="text" id="floatingPhone" formControlName="Phone">
+            </div>
+          </div>
+  
+          <div class="form-row">
+            <div class="form-group">
+              <label for="floatingNIC">NIC:</label>
+              <input type="text" id="floatingNIC" formControlName="NIC">
+            </div>
+  
+            <div class="form-group">
+              <label for="floatingDOB">DOB:</label>
+              <input type="text" id="floatingDOB" formControlName="DOB">
+            </div>
+          </div>
+  
+          <div class="form-row">
+            <div class="form-group">
+              <label for="floatingAddress">Address:</label>
+              <textarea id="floatingAddress" formControlName="Address" rows="5"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <div class="button-group">
+      <button mat-button (click)="closeDialog()" class="btn btn-secondary">Close</button>
+      <button mat-button (click)="saveChanges()" class="btn btn-primary">Save Changes</button>
+    </div>
+  </div>
+  

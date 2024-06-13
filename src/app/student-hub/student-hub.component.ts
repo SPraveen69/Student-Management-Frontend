@@ -65,7 +65,7 @@ export class StudentHubComponent {
   openEditStuedentDialog(student: Student):void{
     const dialogRef = this.dialog.open(EditStudentComponent, {
       width: '800px',
-      height: '450px',
+      height: '430px',
       data: student,
     });
 
@@ -78,8 +78,8 @@ export class StudentHubComponent {
 
   openViewStudentDialog(student: Student):void{
     const dialogRef = this.dialog.open(ViewStudentComponent, {
-      width: '800px',
-      height: '450px',
+      width: '1000px',
+      height: '338px',
       data: student,
     });
 
@@ -89,6 +89,13 @@ export class StudentHubComponent {
       }
     })
   }
+
+  // toggleStudentDetails(student: Student): void {
+  //   if (this.selectedStudent && this.selectedStudent.id === student.id) {
+  //     this.selectedStudent = null; 
+  //   } else {
+  //     this.selectedStudent = student;
+  //   }
+  }
   
-}
  

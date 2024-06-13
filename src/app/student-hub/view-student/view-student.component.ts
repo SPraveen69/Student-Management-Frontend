@@ -37,11 +37,13 @@ export class ViewStudentComponent {
   }
 
   ngOnInit() {
-  console.log(this.data);
+    if (this.data) {
+      this.viewForm.patchValue(this.data);
+      this.loadImage(this.data.photo);
+    }
   }
  
   loadImage(photo: string): void {
-    // Assume the photo is a base64 string for simplicity
     this.imageUrl = `data:image/jpeg;base64,${photo}`;
   }
 

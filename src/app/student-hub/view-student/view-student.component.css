@@ -1,61 +1,105 @@
 .student-details {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
   }
   
-  .student-details h2 {
-    text-align: center;
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+  }
+  
+  .close-button:hover {
     color: #333;
-    margin-bottom: 20px;
+  }
+  
+  .student-card {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    font-size: 1.2em;
+  }
+  
+  .student-left {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .student-photo-container {
+    background-color: #f5f5f5;
+    padding: 20px;
   }
   
   .student-photo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .student-photo img {
     border-radius: 50%;
-    max-width: 150px;
-    max-height: 150px;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 4px solid #e0e0e0;
   }
   
-  .student-info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .student-name {
+    margin-top: 20px;
   }
   
-  .student-info p {
+  .student-name h2 {
     margin: 0;
-    font-size: 16px;
-    color: #555;
-  }
-  
-  .student-info p strong {
+    font-size: 28px;
     color: #333;
   }
   
-  .close-btn {
-    display: block;
-    width: 100px;
-    margin: 20px auto 0;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
+  .student-right {
+    flex: 2;
+    padding-left: 30px;
   }
   
-  .close-btn:hover {
-    background-color: #0056b3;
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  .form-group:last-child {
+    margin-right: 0;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-group input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .form-group input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
   }
   
