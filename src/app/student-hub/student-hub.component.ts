@@ -8,6 +8,7 @@ import { SharedService } from 'src/services/shared/shared.service';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { ViewStudentComponent } from './view-student/view-student.component';
+import { DeleteStudentComponent } from './delete-student/delete-student.component';
 
 @Component({
   selector: 'app-student-hub',
@@ -80,6 +81,20 @@ export class StudentHubComponent {
     const dialogRef = this.dialog.open(ViewStudentComponent, {
       width: '1000px',
       height: '338px',
+      data: student,
+    });
+
+    dialogRef.afterClosed().subscribe((result)=>{
+      if(result){
+        this.loadStudents();
+      }
+    })
+  }
+  
+  openDeleteStuedentDialog(student: Student):void{
+    const dialogRef = this.dialog.open(DeleteStudentComponent, {
+      width: '500px',
+      height: '200px',
       data: student,
     });
 

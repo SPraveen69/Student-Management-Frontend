@@ -55,7 +55,7 @@ export class EditStudentComponent {
   loadImage(photo: string | null): void {
     if (photo) {
       this.imageUrl = `data:image/jpeg;base64,${photo}`;
-      this.blob = this.dataURItoBlob(this.imageUrl);
+      //this.blob = this.dataURItoBlob(this.imageUrl);
     } else {
      
       this.imageUrl = null;
@@ -82,22 +82,18 @@ export class EditStudentComponent {
       });
     }
 
-    dataURItoBlob(dataURI: string): Blob {
-      // Split the base64 string to get the data part
-      const byteString = atob(dataURI.split(',')[1]);
+    // dataURItoBlob(dataURI: string): Blob {
+     
+    //   const byteString = atob(dataURI.split(',')[1]);
     
-      // Separate out the mime component
-      const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-    
-      // Convert to byte array
-      const byteNumbers: number[] = [];
-      for (let i = 0; i < byteString.length; i++) {
-        byteNumbers.push(byteString.charCodeAt(i));
-      }
-    
-      // Create Blob object
-      return new Blob([new Uint8Array(byteNumbers)], { type: mimeString });
-    }
+    //   const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+    //   const byteNumbers: number[] = [];
+    //   for (let i = 0; i < byteString.length; i++) {
+    //     byteNumbers.push(byteString.charCodeAt(i));
+    //   }
+  
+    //   return new Blob([new Uint8Array(byteNumbers)], { type: mimeString });
+    // }
     
     saveChanges(): void{
     
