@@ -1,7 +1,16 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .page {
   color: aliceblue;
   background: #fff;
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
 }
 
 .page__box {
@@ -12,20 +21,22 @@
 }
 
 .page__content {
-  min-height: calc(100vh - 178px);
+  flex: 1; 
   border-radius: 10px;
   margin-top: -2rem;
   background: #fff;
   color: #000;
   font-size: 2rem;
+  overflow: auto; /* Enable scrolling if content overflows */
+  padding: 1rem; /* Add padding for better appearance */
 }
 
 .page__content-data {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 .styled-table {
   width: 100%;
@@ -44,26 +55,11 @@
   background-color: #f2f2f2;
 }
 
-.btn0{
+.btn0, .btn1, .btn2 {
   height: 40px;
   width: 40px;
   border-radius: 0.6rem;
   margin-right: 0.6rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease; 
-}
-.btn1{
-  height: 40px;
-  width: 40px;
-  border-radius: 0.6rem;
-  margin-right: 0.6rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease; 
-}
-.btn2{
-  height: 40px;
-  width: 40px;
-  border-radius: 0.6rem;
   cursor: pointer;
   transition: background-color 0.3s ease; 
 }
@@ -73,12 +69,10 @@
   color: #fff; 
 }
 
-
 .btn1:hover {
   background-color: #ffc107; 
   color: #fff; 
 }
-
 
 .btn2:hover {
   background-color: #740606;

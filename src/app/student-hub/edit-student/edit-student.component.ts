@@ -36,6 +36,7 @@ export class EditStudentComponent {
         NIC: [data.nic, [Validators.required, Validators.maxLength(12)]],
         DOB: [data.dob, [Validators.required, Validators.maxLength(10)]],
         Address: [data.address, [Validators.required, Validators.maxLength(100)]],
+        Photo: [data.photo]
     });
 
     
@@ -55,7 +56,7 @@ export class EditStudentComponent {
   loadImage(photo: string | null): void {
     if (photo) {
       this.imageUrl = `data:image/jpeg;base64,${photo}`;
-      //this.blob = this.dataURItoBlob(this.imageUrl);
+      this.blob = this.dataURItoBlob(this.imageUrl);
     } else {
      
       this.imageUrl = null;
@@ -82,18 +83,18 @@ export class EditStudentComponent {
       });
     }
 
-    // dataURItoBlob(dataURI: string): Blob {
+    dataURItoBlob(dataURI: string): Blob {
      
-    //   const byteString = atob(dataURI.split(',')[1]);
+      const byteString = atob(dataURI.split(',')[1]);
     
-    //   const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-    //   const byteNumbers: number[] = [];
-    //   for (let i = 0; i < byteString.length; i++) {
-    //     byteNumbers.push(byteString.charCodeAt(i));
-    //   }
+      const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+      const byteNumbers: number[] = [];
+      for (let i = 0; i < byteString.length; i++) {
+        byteNumbers.push(byteString.charCodeAt(i));
+      }
   
-    //   return new Blob([new Uint8Array(byteNumbers)], { type: mimeString });
-    // }
+      return new Blob([new Uint8Array(byteNumbers)], { type: mimeString });
+    }
     
     saveChanges(): void{
     
@@ -113,12 +114,12 @@ export class EditStudentComponent {
           formData.append('NIC', this.editForm.value.NIC);
           formData.append('DOB', this.editForm.value.DOB);
           formData.append('Address', this.editForm.value.Address);
-          // if (this.profilePicture) {
-          //   formData.append('Photo', this.profilePicture);
-          // } else {
+          if (this.profilePicture) {
+            formData.append('Photo', this.profilePicture);
+          } else {
             
-          //   formData.append('Photo', this.blob);
-          // }
+            formData.append('Photo', this.blob);
+          }
           
           this.service.editStudent(this.editForm.value.Id,formDataValues).subscribe(
             (response) => {

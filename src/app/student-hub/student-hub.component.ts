@@ -28,23 +28,44 @@ export class StudentHubComponent {
     this.loadStudents();
   }
 
-  @ViewChild(MatPaginator) paginator : MatPaginator | undefined;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>([]);
+  displayedColumns: string[] = ['firstName', 'lastName', 'email', 'phone', 'nic', 'action'];
+
   pageSize = 10;
   pageIndex = 0;
   totalItems = 0;
-  loadStudents(){
-    this.service.allStudents().subscribe(
-      (data) => {
-        console.log(data);
-        this.students = data;
-        this.totalItems = this.students.length;
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
+  loadStudents() {
+    this.service.allStudents().subscribe((data: Student[]) => {
+      this.students = data;
+      this.totalItems = data.length;
+      this.dataSource = new MatTableDataSource(this.students);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
 
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+
+    this.dataSource.filterPredicate = (data: Student, filter: string) => {
+      const searchTerm = filter.toLowerCase();
+      return (
+        data.firstName.toLowerCase().includes(searchTerm) ||
+        data.lastName.toLowerCase().includes(searchTerm) ||
+        data.email.toLowerCase().includes(searchTerm) ||
+        data.phone.toLowerCase().includes(searchTerm) ||
+        data.nic.toLowerCase().includes(searchTerm)
+      );
+    };
+
+    this.dataSource.filter = filterValue;
+  }
+  
   onPageChange(event:any) : void {
     this.pageIndex = event.pageIndex;
     this.pageSize = event.pageSize;
@@ -63,7 +84,7 @@ export class StudentHubComponent {
     });
   }
 
-  openEditStuedentDialog(student: Student):void{
+  openEditStudentDialog(student: Student):void{
     const dialogRef = this.dialog.open(EditStudentComponent, {
       width: '800px',
       height: '430px',
@@ -91,7 +112,7 @@ export class StudentHubComponent {
     })
   }
   
-  openDeleteStuedentDialog(student: Student):void{
+  openDeleteStudentDialog(student: Student):void{
     const dialogRef = this.dialog.open(DeleteStudentComponent, {
       width: '500px',
       height: '200px',
