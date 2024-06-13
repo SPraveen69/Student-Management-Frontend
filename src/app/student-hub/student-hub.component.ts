@@ -87,7 +87,7 @@ export class StudentHubComponent {
   openEditStudentDialog(student: Student):void{
     const dialogRef = this.dialog.open(EditStudentComponent, {
       width: '800px',
-      height: '430px',
+      height: '433px',
       data: student,
     });
 
