@@ -1,14 +1,13 @@
 <mat-dialog-content>
    <div class="form-container">
      <div class="form-group">
-       <h1 style="font-family: Lucida Handwriting;">Insert Student Details</h1>
+       <h1 style="font-family: fantasy;">Insert Student Details</h1>
        <form [formGroup]="studentForm">
  
          <!-- Profile Picture -->
          <div class="profile-picture mb-3">
            <label for="profilePic" class="profile-pic-label">
-             <img *ngIf="profilePicture" [src]="profilePicture" alt="Profile Picture">
-             <mat-icon *ngIf="!profilePicture">account_circle</mat-icon>
+            <img *ngIf="profilePictureUrl" [src]="profilePictureUrl" alt="Profile Picture" class="profile-photo">
              <input type="file" id="profilePic" (change)="onFileSelected($event)" accept="image/*">
             
            </label>

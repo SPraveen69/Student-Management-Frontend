@@ -2,3 +2,11 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.custom-snackbar {
+    
+    color: white !important;
+    padding: 36px 80px !important;
+    border-radius: 4px !important;
+    font-size: 160px !important;
+    font-weight: bold !important; 
+  }

@@ -74,7 +74,7 @@ export class StudentHubComponent {
   openAddStudentDialog(): void{
     const dialogRef = this.dialog.open(AddStudentComponent, {
       width: '700px',
-      height: '570px'
+      height: '630px'
     });
 
     dialogRef.afterClosed().subscribe((result) => {

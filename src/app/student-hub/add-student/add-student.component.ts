@@ -15,6 +15,7 @@ export class AddStudentComponent {
   submitted = false;
   Photo: FormControl = new FormControl(null, Validators.required);
   profilePicture!: File;
+  profilePictureUrl: string | ArrayBuffer | null = null;
 
   constructor(
     public dialogRef: MatDialogRef<AddStudentComponent>,
@@ -60,7 +61,7 @@ export class AddStudentComponent {
     if (this.profilePicture) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
-        this.profilePicture = e.target.result;
+        this.profilePictureUrl = e.target.result;
       };
       reader.readAsDataURL(this.profilePicture);
     }
@@ -92,6 +93,7 @@ export class AddStudentComponent {
         },
         (error) => {
           console.log("Error in Inserting", error);
+          this.showErrorMessage('PLEASE CHECK THE FORM');
         }
       );
     }else {
