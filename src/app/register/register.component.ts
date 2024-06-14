@@ -22,13 +22,28 @@ export class RegisterComponent {
 
   }
 
+  showSuccessMessage(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000, 
+      panelClass: 'custom-snackbar'
+    });
+  }
+  
+  showErrorMessage(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000, 
+      panelClass: 'custom-snackbar'
+    });
+  }
+
   OnRegister(){
     if(this.registerForm.valid){
       console.log(this.registerForm.value);
       this.authService.register(this.registerForm.value).subscribe({
         next: (res) => {
           console.log(res.message);
-          this.snackBar.open('The Account Creation is successful', 'Close', {
+          this.router.navigate(['/login']);
+          this.snackBar.open('Your account is now active. Welcome to the community!', 'Close', {
             duration: 8000,
         })
         },
@@ -41,6 +56,7 @@ export class RegisterComponent {
       });
     }else{
       console.log("Please check the details again");
+    this.showErrorMessage('PLEASE CHECK All THE NECCESSARY FIELDS ARE SET');
     }
   }
 

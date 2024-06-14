@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthguardService } from 'src/services/auth/authguard.service';
 
@@ -12,7 +13,7 @@ export class LoginComponent {
 
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authGuard: AuthguardService, private router: Router)
+  constructor( private snackBar: MatSnackBar,private fb: FormBuilder, private authGuard: AuthguardService, private router: Router)
   {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
@@ -27,15 +28,33 @@ export class LoginComponent {
           console.log(res.message);
           this.authGuard.storeToken(res.token);
           this.router.navigate(['/studenthub']);
+          this.showSuccessMessage('LOGGED IN');
         },
         error: (err) => {
           console.log(err);
+          this.showSuccessMessage('CHECK THE CREDENTIALS');
         },
       });    
     }else{
+      this.showSuccessMessage('CHECK THE CREDENTIALS');
       console.log("Please check your credentials");
     }
   }
+  showSuccessMessage(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000, 
+      panelClass: 'custom-snackbar'
+    });
+  }
+  
+  showErrorMessage(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000, 
+      panelClass: 'custom-snackbar'
+    });
+  }
+  
+
 
   onRegister(): void {
     this.router.navigate(['/register']);

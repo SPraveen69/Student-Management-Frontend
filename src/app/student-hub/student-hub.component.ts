@@ -101,7 +101,7 @@ export class StudentHubComponent {
   openViewStudentDialog(student: Student):void{
     const dialogRef = this.dialog.open(ViewStudentComponent, {
       width: '1000px',
-      height: '338px',
+      height: '365px',
       data: student,
     });
 

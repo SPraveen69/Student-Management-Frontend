@@ -34,6 +34,20 @@ export class DeleteStudentComponent {
       }
     )
   }
+
+  showSuccessMessage(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 10000, 
+      panelClass: 'custom-snackbar'
+    });
+  }
+    showErrorMessage(message: string) {
+      this.snackBar.open(message, 'Close', {
+        duration: 10000, 
+        panelClass: 'custom-snackbar'
+      });
+    }
+  
   onNoClick(): void {
     this.dialogRef.close(false);
   }
@@ -45,10 +59,12 @@ export class DeleteStudentComponent {
         console.log('Student Deleted Successfully', response);
         this.dialogRef.close(true);
         this.loadStudents();
+        this.showSuccessMessage('STUDENT RECORD IS DELECTED SUCCESSFULLY');
       },
       (error) => {
         console.log('Error in Deleting', error);
         this.dialogRef.close(false); 
+        this.showErrorMessage('CANNOT DELETE THIS RECORD!');
       }
     );
   }
